@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

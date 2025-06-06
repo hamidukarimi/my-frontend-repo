@@ -1,3 +1,4 @@
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -33,7 +34,7 @@ const ProductCard = ({
 
     try {
       const response = await fetch(
-        `https://my-backend-repo-x20l.onrender.com/api/users/posts/${postId}/like`,
+        `${BASE_URL}/api/users/posts/${postId}/like`,
         {
           method: "POST",
           headers: {
