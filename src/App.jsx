@@ -4,11 +4,9 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 // import Users from "./components/Users/users";
 import Register from "./components/register/Register";
-import Profile from "./components/profile/Profile";
-import CreatePost from "./components/CreatePost/CreatePost";
+import Profile from "./components/Profile/Profile";
+import CreatePost from "./components/createPost/CreatePost";
 import UserProfile from "./components/Profile/UserProfile";
-
-
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -45,7 +43,6 @@ const App = () => {
             <Route path="/user-profile/:userId" element={<UserProfile />} />
             <Route path="/create-post" element={<CreatePost />} />
             {/* <Route path="/users" element={<Users />} /> */}
-           
           </Routes>
         </>
       )}
