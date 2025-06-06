@@ -3,7 +3,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 // import Users from "./components/Users/users";
-import Register from "./components/register/register";
+import Register from "./components/register/Register";
 import Profile from "./components/profile/Profile";
 import CreatePost from "./components/CreatePost/CreatePost";
 import UserProfile from "./components/Profile/UserProfile";
