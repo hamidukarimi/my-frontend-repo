@@ -23,6 +23,7 @@ const App = () => {
       window.addEventListener("load", handleLoad);
       // Cleanup the event listener when the component unmounts.
       return () => window.removeEventListener("load", handleLoad);
+      // a simple comment
     }
   }, []);
 
