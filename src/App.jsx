@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
-import Users from "./components/Users/users";
+// import Users from "./components/Users/users";
 import Register from "./components/register/register";
 import Profile from "./components/profile/Profile";
 import CreatePost from "./components/CreatePost/CreatePost";
@@ -44,7 +44,7 @@ const App = () => {
             <Route path="/profile" element={<Profile />} />
             <Route path="/user-profile/:userId" element={<UserProfile />} />
             <Route path="/create-post" element={<CreatePost />} />
-            <Route path="/users" element={<Users />} />
+            {/* <Route path="/users" element={<Users />} /> */}
            
           </Routes>
         </>
