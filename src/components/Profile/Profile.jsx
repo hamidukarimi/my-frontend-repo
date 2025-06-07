@@ -235,15 +235,15 @@ const Profile = () => {
         <hr />
 
         {/* third section */}
-        <div className="my-9 flex flex-col gap-3">
+        <div className="my-9 flex flex-col gap-2">
           {cards.map((card, index) => (
             <div
               key={index}
-              className="w-full h-[76px] overflow-hidden rounded-[16px] pl-5 flex justify-between items-center bg-white"
+              className="w-full h-[65px] overflow-hidden rounded-[16px] pl-5 flex justify-between items-center bg-white"
             >
               <div className="flex items-center gap-4">
                 <span className="text-[33px]">
-                  <img className="w-9" src={card.icon} />
+                  <img className="w-8" src={card.icon} />
                 </span>
                 <Link to={card.path}>
                   <span className="text-[20px] font-bold active:underline">
