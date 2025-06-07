@@ -90,6 +90,9 @@ const Products = () => {
     },
   ];
 
+  // console.log("Posts data:", posts);
+
+
   return (
     <>
       <div className="px-4 my-5">
@@ -100,7 +103,7 @@ const Products = () => {
           {posts.map((post, index) => (
             <ProductCard
               key={index}
-              image={`${BASE_URL}${post.imagePath}`}
+              image={post.imagePath}
               title={post.name}
               description={post.description}
               price={post.price}
@@ -109,7 +112,7 @@ const Products = () => {
               likes={post.likes}
               userName={post.userName}
               userId={post.userId}
-              profilePicture={`${BASE_URL}${post.profilePicture}`}
+              profilePicture={post.profilePicture}
               fetchPosts={fetchPosts}
             />
           ))}

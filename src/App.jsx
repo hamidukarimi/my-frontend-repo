@@ -9,6 +9,8 @@ import CreatePost from "./components/createPost/CreatePost";
 import UserProfile from "./components/Profile/UserProfile";
 
 const App = () => {
+  console.log("Using API:", import.meta.env.VITE_API_BASE_URL);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

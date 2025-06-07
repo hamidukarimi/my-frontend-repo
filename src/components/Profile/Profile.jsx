@@ -186,7 +186,7 @@ const Profile = () => {
             <img
               src={
                 user.profilePicture
-                  ? `${BASE_URL}${user.profilePicture}`
+                  ? `${user.profilePicture}`
                   : "https://i.pinimg.com/736x/33/f8/26/33f8266681c946cd80de486c499fe992.jpg"
               }
               alt="Profile"
@@ -309,14 +309,14 @@ const Profile = () => {
 
               <ProductCard
                 key={index}
-                image={`${BASE_URL}${post.imagePath}`}
+                image={post.imagePath}
                 title={post.name}
                 price={post.price}
                 prevPrice={post.prevPrice}
                 postId={post._id}
                 likes={post.likes}
                 userName={post.userName}
-                profilePicture={`${BASE_URL}${user.profilePicture}`}
+                profilePicture={user.profilePicture}
                 deletePost={() => handleDelete(post._id)}
                 updatePost={() => setEditingPostId(post._id)}
               />

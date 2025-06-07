@@ -82,7 +82,7 @@ const UserProfile = () => {
             <img
               src={
                 profilePicture
-                  ? `${BASE_URL}${profilePicture}`
+                  ? `${profilePicture}`
                   : "https://i.pinimg.com/736x/33/f8/26/33f8266681c946cd80de486c499fe992.jpg"
               }
               alt="Profile"
@@ -131,14 +131,14 @@ const UserProfile = () => {
           {[...posts].reverse().map((post) => (
             <ProductCard
               key={post._id}
-              image={`${BASE_URL}${post.imagePath}`}
+              image={post.imagePath}
               title={post.name}
               price={post.price}
               prevPrice={post.prevPrice}
               postId={post._id}
               likes={post.likes}
               userName={post.userName}
-              profilePicture={`${BASE_URL}${profilePicture}`}
+              profilePicture={profilePicture}
               // No deletePost or updatePost for someone else's posts
             />
           ))}
