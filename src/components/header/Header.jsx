@@ -22,7 +22,7 @@ let Header = () => {
 
   return (
     <>
-      <nav className="sticky -top-1 z-40 w-full bg-[#f1f2f4]  border-b-4 flex justify-between  text-[27px]   py-3 px-5">
+      <nav className="sticky -top-1 z-40 w-full bg-[#f1f2f4]  border-b-4 flex justify-between  text-[27px]   py-1 px-5">
       <button
             onClick={() => setSidebarOpen(true)}
             className="text-black hover:text-gray-700 focus:outline-none"

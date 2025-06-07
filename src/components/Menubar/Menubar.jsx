@@ -62,13 +62,13 @@ const Menubar = () => {
             return {
               fontWeight: isActive ? "bold" : "",
               borderTop: isActive ? "2px solid white" : "",
-              color: isActive ? "black" : "#2b2b2b",
+              color: isActive ? "black" : "#515151",
             };
           }}
         >
-          <div className="menus-item w-full h-[63px]  bg-transparent hover:bg-[#f0f0f0] transition   flex flex-col justify-center items-center gap-1 text-[23px] ">
+          <div className="menus-item w-full h-[63px]  bg-transparent hover:bg-[#f0f0f0] transition   flex flex-col justify-center items-center gap-1 text-[21px] ">
             <FontAwesomeIcon className={`${menusItem.size}`} icon={menusItem.src} />
-            <span style={{ fontSize: "14px" }}>{menusItem.name}</span>
+            <span style={{ fontSize: "12px" }}>{menusItem.name}</span>
           </div>
         </NavLink>
       ))}
