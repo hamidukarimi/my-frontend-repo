@@ -194,7 +194,7 @@ const Profile = () => {
             />
           </div>
           <div className="w-full h-full  flex flex-col gap-2 ">
-            <p className="text-[24px] font-bold">{name}</p>
+            <p className="text-[24px] font-bold">{name} {lastName}</p>
             <input
               className="w-full px-4 py-2 bg-white rounded-full outline-none"
               placeholder="Search..."
@@ -311,11 +311,13 @@ const Profile = () => {
                 key={index}
                 image={post.imagePath}
                 title={post.name}
+                description={post.description}
                 price={post.price}
                 prevPrice={post.prevPrice}
                 postId={post._id}
                 likes={post.likes}
                 userName={post.userName}
+                userId={post.userId}
                 profilePicture={user.profilePicture}
                 deletePost={() => handleDelete(post._id)}
                 updatePost={() => setEditingPostId(post._id)}

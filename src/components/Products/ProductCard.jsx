@@ -102,7 +102,7 @@ const ProductCard = ({
     <div className="relative rounded-2xl shadow-sm overflow-hidden ">
       <button
         onClick={toggleBottomSheet}
-        className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 transition-colors duration-200"
+        className="absolute top-2 right-2 text-gray-700 text-lg hover:text-gray-700 transition-colors duration-200"
       >
         <FontAwesomeIcon icon={faEllipsisVertical} />
       </button>
@@ -175,9 +175,11 @@ const ProductCard = ({
         </div>
       </div>
 
+      <Link to={`/products/${postId}`}>
       <div className=" w-full h-[200px] rounded-2xl  overflow-hidden bg-placeholderColor">
         <img className=" object-cover w-full h-full" src={image} />
       </div>
+      </Link>
       <div className="flex  justify-between items-center py-2">
         <div className="flex items-center gap-2">
           <Link to={`/user-profile/${userId}`}>
@@ -193,7 +195,7 @@ const ProductCard = ({
             <div className="flex items-center gap-2">
               <p className="font-bold ">{title}</p>
               <p>${price}</p>
-              <p className="text-sm">$200</p>
+              <p className="text-sm line-through">$200</p>
             </div>
             <p
               onClick={toggleFullDescription}

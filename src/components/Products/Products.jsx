@@ -46,99 +46,43 @@ const Products = () => {
     fetchPosts();
   }, []);
 
+
+
   if (loading) {
-    return (
-      <div className="w-full px-4 mt-3">
-        <div className="grid grid-cols-1 gap-4">
-          <div className="max-w-md w-full  space-y-4 border rounded-2xl animate-pulse">
+  return (
+    <div className="w-full px-4 mt-3">
+      <div className="grid grid-cols-1 gap-4">
+        {[...Array(4)].map((_, index) => (
+          <div
+            key={index}
+            className="max-w-md w-full space-y-4 border rounded-2xl animate-pulse"
+          >
             {/* Image placeholder */}
-            <div className="w-full h-48 bg-gray-200 rounded-2xl"></div>
+            <div className="w-full h-48 bg-gray-300 rounded-2xl"></div>
 
             {/* Content */}
             <div className="flex justify-between items-start">
               <div className="flex items-center gap-4">
                 {/* Avatar placeholder */}
-                <div className="w-11 h-11 rounded-full bg-gray-200"></div>
+                <div className="w-11 h-11 rounded-full bg-gray-300"></div>
 
                 {/* Title & price placeholders */}
                 <div className="space-y-2">
-                  <div className="w-16 h-4 bg-gray-200 rounded-md"></div>
-                  <div className="w-32 h-4 bg-gray-200 rounded-md"></div>
+                  <div className="w-16 h-4 bg-gray-300 rounded-md"></div>
+                  <div className="w-32 h-4 bg-gray-300 rounded-md"></div>
                 </div>
               </div>
 
               {/* Like button placeholder */}
-              <div className="w-10 h-10 bg-gray-200 rounded-md"></div>
+              <div className="w-10 h-10 bg-gray-300 rounded-md"></div>
             </div>
           </div>
-
-          <div className="max-w-md w-full  space-y-4 border rounded-2xl animate-pulse">
-            {/* Image placeholder */}
-            <div className="w-full h-48 bg-gray-200 rounded-2xl"></div>
-
-            {/* Content */}
-            <div className="flex justify-between items-start">
-              <div className="flex items-center gap-4">
-                {/* Avatar placeholder */}
-                <div className="w-11 h-11 rounded-full bg-gray-200"></div>
-
-                {/* Title & price placeholders */}
-                <div className="space-y-2">
-                  <div className="w-16 h-4 bg-gray-200 rounded-md"></div>
-                  <div className="w-32 h-4 bg-gray-200 rounded-md"></div>
-                </div>
-              </div>
-
-              {/* Like button placeholder */}
-              <div className="w-10 h-10 bg-gray-200 rounded-md"></div>
-            </div>
-          </div>
-          <div className="max-w-md w-full  space-y-4 border rounded-2xl animate-pulse">
-            {/* Image placeholder */}
-            <div className="w-full h-48 bg-gray-200 rounded-2xl"></div>
-
-            {/* Content */}
-            <div className="flex justify-between items-start">
-              <div className="flex items-center gap-4">
-                {/* Avatar placeholder */}
-                <div className="w-11 h-11 rounded-full bg-gray-200"></div>
-
-                {/* Title & price placeholders */}
-                <div className="space-y-2">
-                  <div className="w-16 h-4 bg-gray-200 rounded-md"></div>
-                  <div className="w-32 h-4 bg-gray-200 rounded-md"></div>
-                </div>
-              </div>
-
-              {/* Like button placeholder */}
-              <div className="w-10 h-10 bg-gray-200 rounded-md"></div>
-            </div>
-          </div>
-          <div className="max-w-md w-full  space-y-4 border rounded-2xl animate-pulse">
-            {/* Image placeholder */}
-            <div className="w-full h-48 bg-gray-200 rounded-2xl"></div>
-
-            {/* Content */}
-            <div className="flex justify-between items-start">
-              <div className="flex items-center gap-4">
-                {/* Avatar placeholder */}
-                <div className="w-11 h-11 rounded-full bg-gray-200"></div>
-
-                {/* Title & price placeholders */}
-                <div className="space-y-2">
-                  <div className="w-16 h-4 bg-gray-200 rounded-md"></div>
-                  <div className="w-32 h-4 bg-gray-200 rounded-md"></div>
-                </div>
-              </div>
-
-              {/* Like button placeholder */}
-              <div className="w-10 h-10 bg-gray-200 rounded-md"></div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
-    );
-  }
+    </div>
+  );
+}
+
 
   const products_1 = [
     {

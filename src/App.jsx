@@ -7,6 +7,7 @@ import Register from "./components/register/Register";
 import Profile from "./components/Profile/Profile";
 import CreatePost from "./components/createPost/CreatePost";
 import UserProfile from "./components/Profile/UserProfile";
+import ProductInfo from "./components/Product-info/ProductInfo";
 
 const App = () => {
   console.log("Using API:", import.meta.env.VITE_API_BASE_URL);
@@ -43,8 +44,12 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
+            {/* <Route path="/product-info" element={<ProductInfo />} /> */}
+            {/* <Route path="/product-info/:postId" element={<ProductInfo />} /> */}
             <Route path="/user-profile/:userId" element={<UserProfile />} />
             <Route path="/create-post" element={<CreatePost />} />
+            <Route path="/products/:id" element={<ProductInfo />} />
+
             {/* <Route path="/users" element={<Users />} /> */}
           </Routes>
         </>
