@@ -221,7 +221,7 @@ const Profile = () => {
 
           {details.map((item, index) => (
             <a key={index} href={item.path} target="_blank">
-              <div className="text-xl flex items-center gap-3">
+              <div className="text-lg flex items-center gap-3">
                 <FontAwesomeIcon
                   className="text-gray-400 w-4"
                   icon={item.icon}
