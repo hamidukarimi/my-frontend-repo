@@ -33,7 +33,7 @@ let Header = () => {
         <div className="flex  items-center relative">
           <Link to="/create-post" className="cursor-pointer p-3 rounded-full hover:bg-[#e5e5e5] transition">
           <span>
-            <img className="w-6" src="./plus.png" />
+            <img className="w-6" src="./plus.svg" />
           </span>
           </Link>
           <span className="cursor-pointer p-3 rounded-full hover:bg-[#e5e5e5] transition">

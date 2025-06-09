@@ -1,5 +1,6 @@
 // components/Sidebar.jsx
 import React, { useState, useEffect } from "react";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -80,6 +81,44 @@ const MENU_ITEMS = [
  *   - onClose: function to call when the sidebar (or overlay) should close
  */
 export default function Sidebar({ isOpen, onClose }) {
+  const [user, setUser] = useState(null);
+
+  // ✅ Reusable function to fetch latest user data
+  const fetchUserData = async () => {
+    const storedUser = localStorage.getItem("user");
+    const { _id } = JSON.parse(storedUser);
+
+    try {
+      const res = await fetch(`${BASE_URL}/api/users/${_id}`);
+      const data = await res.json();
+      setUser(data);
+    } catch (err) {
+      console.error("❌ Error fetching user data:", err);
+    }
+  };
+
+  // ✅ On mount, fetch user or redirect
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const storedUser = localStorage.getItem("user");
+
+    if (!token || !storedUser) {
+      navigate("/register");
+      return;
+    }
+
+    fetchUserData();
+  }, []);
+
+  //     const {
+
+  //   name,
+  //   lastName,
+  //   email,
+  //   profilePicture,
+
+  // } = user;
+
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -275,19 +314,30 @@ export default function Sidebar({ isOpen, onClose }) {
 
             {/* Profile Section */}
             <div className="mt-auto border-t border-gray-200 px-4 py-4">
-              <div className="flex items-center space-x-3">
-                <img
-                  src="https://via.placeholder.com/36"
-                  alt="User Avatar"
-                  className="h-9 w-9 rounded-full object-cover"
-                />
-                <div>
-                  <p className="text-sm font-medium text-gray-900">
-                    Annie Cruz
-                  </p>
-                  <p className="text-xs text-gray-500">annie@untitledui.com</p>
+              {!user ? (
+                <div className="p-3 flex items-center gap-2">
+                  <div className="spinner w-5 h-5 border-gray-800 border-t-white"></div>
+                  <span className="text-gray-800">Loading Profile</span>
                 </div>
-              </div>
+              ) : (
+                <div className="flex items-center space-x-3">
+                  <img
+                    src={
+                      user.profilePicture
+                        ? `${user.profilePicture}`
+                        : "https://i.pinimg.com/736x/33/f8/26/33f8266681c946cd80de486c499fe992.jpg"
+                    }
+                    alt="User Avatar"
+                    className="h-9 w-9 rounded-full object-cover"
+                  />
+                  <div>
+                    <p className="text-sm font-medium text-gray-900">
+                      {user.name} {user.lastName}
+                    </p>
+                    <p className="text-xs text-gray-500">{user.email}</p>
+                  </div>
+                </div>
+              )}
             </div>
           </motion.aside>
         </motion.div>

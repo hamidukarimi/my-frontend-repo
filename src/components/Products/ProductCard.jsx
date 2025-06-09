@@ -193,7 +193,7 @@ const ProductCard = ({
 
           <div>
             <div className="flex items-center gap-2">
-              <p className="font-bold ">{title}</p>
+              <p className="font-bold line-clamp-1">{title}</p>
               <p>${price}</p>
               <p className="text-sm line-through">$200</p>
             </div>

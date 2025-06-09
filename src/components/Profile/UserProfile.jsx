@@ -11,6 +11,7 @@ import {
 import Header from "../header/Header";
 import Menubar from "../Menubar/Menubar";
 import ProductCard from "../Products/ProductCard";
+import BackNav from "../backNav/BackNav";
 
 const UserProfile = () => {
   const { userId } = useParams();
@@ -44,6 +45,7 @@ const UserProfile = () => {
 
   const {
     name,
+    lastName,
     profilePicture,
     bio,
     location,
@@ -72,7 +74,7 @@ const UserProfile = () => {
 
   return (
     <>
-      <Header />
+      <BackNav pageName={`${name} ${lastName}`}/>
       <Menubar />
 
       <div className="px-4 py-6">
@@ -91,7 +93,7 @@ const UserProfile = () => {
           </div>
 
           <div className="w-full h-full flex flex-col gap-2">
-            <p className="text-[24px] font-bold">{name}</p>
+            <p className="text-[24px] font-bold">{name} {lastName}</p>
             <div className="flex items-center gap-3 text-gray-800 text-lg">
               <p>
                 <strong>{followers.length}</strong> Followers
