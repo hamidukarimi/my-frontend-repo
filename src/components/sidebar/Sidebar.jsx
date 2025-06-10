@@ -52,14 +52,14 @@ const MENU_ITEMS = [
     label: "Reporting",
     icon: faClipboardList,
     subItems: [
-      { id: "overview", label: "Overview", href: "/reporting/overview" },
+      { id: "overview", label: "Overview", href: "" },
       {
         id: "notifications",
         label: "Notifications",
         href: "/reporting/notifications",
       },
-      { id: "analytics", label: "Analytics", href: "/reporting/analytics" },
-      { id: "reports", label: "Reports", href: "/reporting/reports" },
+      { id: "analytics", label: "Analytics", href: "" },
+      { id: "reports", label: "Reports", href: "" },
     ],
   },
   {
@@ -67,7 +67,7 @@ const MENU_ITEMS = [
     label: "Users",
     icon: faUserCircle,
     subItems: [
-      { id: "all-users", label: "All Users", href: "/users/all" },
+      { id: "all-users", label: "All Users", href: "/users" },
       { id: "invite-user", label: "Invite User", href: "/users/invite" },
     ],
   },
@@ -152,7 +152,7 @@ export default function Sidebar({ isOpen, onClose }) {
     <AnimatePresence>
       {isOpen && (
         // Wrapper for overlay + sidebar
-        <motion.div key="sidebar-wrapper" className="fixed inset-0 z-50 flex">
+        <motion.div key="sidebar-wrapper" className="fixed inset-0 h-full z-50 flex">
           {/* Overlay */}
           <motion.div
             key="overlay"

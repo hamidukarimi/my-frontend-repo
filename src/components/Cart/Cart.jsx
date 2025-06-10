@@ -6,10 +6,10 @@ const Cart = () => {
     <>
       <Header />
       <Menubar />
-      <div className="px-4 py-6">
-        {/* parent */}
+      {/* <div className="px-4 py-6">
+        
         <div className="grid grid-cols-2 gap-4 gap-y-8">
-          {/* card */}
+          
           <div className="">
             <div className="w-full h-[147px] bg-placeholderColor"></div>
             <p className="text-[14px] ">
@@ -21,7 +21,11 @@ const Cart = () => {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
+
+      <section className="text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <p className="text-nowrap">No item added to cart</p>
+      </section>
     </>
   );
 };
