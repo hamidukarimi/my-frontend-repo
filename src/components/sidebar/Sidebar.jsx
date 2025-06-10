@@ -1,7 +1,7 @@
 // components/Sidebar.jsx
 import React, { useState, useEffect } from "react";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -239,12 +239,12 @@ export default function Sidebar({ isOpen, onClose }) {
                             >
                               {item.subItems.map((sub) => (
                                 <li key={sub.id}>
-                                  <a
-                                    href={sub.href}
+                                  <Link
+                                    to={sub.href}
                                     className="block rounded px-2 py-1 text-sm text-gray-700 hover:bg-gray-100"
                                   >
                                     {sub.label}
-                                  </a>
+                                  </Link>
                                 </li>
                               ))}
                             </motion.ul>
@@ -253,13 +253,13 @@ export default function Sidebar({ isOpen, onClose }) {
                       </div>
                     ) : (
                       /* Single menu link */
-                      <a
-                        href={item.href}
+                      <Link
+                        to={item.href}
                         className="flex items-center space-x-2 rounded px-3 py-2 text-sm text-gray-800 hover:bg-gray-100"
                       >
                         <FontAwesomeIcon icon={item.icon} className="h-5 w-5" />
                         <span>{item.label}</span>
-                      </a>
+                      </Link>
                     )}
                   </li>
                 ))}
@@ -270,31 +270,31 @@ export default function Sidebar({ isOpen, onClose }) {
             <div className="border-t border-gray-200 px-4 py-4">
               <ul className="space-y-1">
                 <li>
-                  <a
-                    href="/notifications"
+                  <Link
+                    to="/notifications"
                     className="flex items-center space-x-2 rounded px-3 py-2 text-sm text-gray-800 hover:bg-gray-100"
                   >
                     <FontAwesomeIcon icon={faBell} className="h-5 w-5" />
                     <span>Notifications</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/support"
+                  <Link
+                    to="/support"
                     className="flex items-center space-x-2 rounded px-3 py-2 text-sm text-gray-800 hover:bg-gray-100"
                   >
                     <FontAwesomeIcon icon={faLifeRing} className="h-5 w-5" />
                     <span>Support</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/settings"
+                  <Link
+                    to="/settings"
                     className="flex items-center space-x-2 rounded px-3 py-2 text-sm text-gray-800 hover:bg-gray-100"
                   >
                     <FontAwesomeIcon icon={faCog} className="h-5 w-5" />
                     <span>Settings</span>
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
