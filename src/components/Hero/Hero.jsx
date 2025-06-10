@@ -35,7 +35,7 @@ const Hero = () => {
         />
       </div>
 
-      <section className="m-4 flex items-center gap-3 overflow-auto">
+      <section className="m-4 flex items-center gap-3 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <div className="w-[75px]">
           <div className="flex justify-center items-center text-3xl text-gray-600 w-[75px] h-[75px] bg-placeholderColor border border-black rounded-2xl overflow-hidden">
             <FontAwesomeIcon icon={faPlus} />

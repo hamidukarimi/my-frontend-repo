@@ -37,7 +37,7 @@ const RecentProducts = () => {
   return (
     <div className="px-4">
       {/* cards parent */}
-      <div className="flex gap-4 my-8 overflow-x-auto">
+      <div className="flex gap-4 my-8   overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {products.map((card) => (
           <RecentProductCard
             key={card.id}
