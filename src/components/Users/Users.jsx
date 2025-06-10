@@ -1,4 +1,3 @@
-const BASE_URL = import.meta.env.VITE_BASE_URL;
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
