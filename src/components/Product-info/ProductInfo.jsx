@@ -6,7 +6,7 @@ import Navbar from "../header/Navbar";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import BackNav from "../backNav/BackNav";
 
-const BASE_URL = "http://localhost:5000"; // change to your backend URL
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const ProductInfo = () => {
   const { id } = useParams(); // get post ID from URL like /product/:id
