@@ -42,7 +42,7 @@ const ProductInfo = () => {
   return (
     <>
       <BackNav pageName={post.name} />
-      <div className="p-4">
+      <div className="">
         {/* product image */}
         <div className="w-full h-[365px] bg-placeholderColor">
           {post.imagePath && (
@@ -54,6 +54,7 @@ const ProductInfo = () => {
           )}
         </div>
 
+          <section className="p-4">
         <p className="text-[25px] font-bold mt-3">{post.name}</p>
         <p>{post.description}</p>
 
@@ -98,6 +99,7 @@ const ProductInfo = () => {
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
           </p>
         </div>
+        </section>
       </div>
     </>
   );
