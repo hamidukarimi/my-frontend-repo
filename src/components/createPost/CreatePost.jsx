@@ -14,6 +14,7 @@ function CreatePost() {
   const [imagePreview, setImagePreview] = useState(null);
   const [message, setMessage] = useState("");
   const fileInputRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -29,6 +30,7 @@ function CreatePost() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     const token = localStorage.getItem("token");
     if (!token) {
@@ -51,7 +53,7 @@ function CreatePost() {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-        body: formData
+        body: formData,
       });
 
       if (!response.ok) {
@@ -70,6 +72,8 @@ function CreatePost() {
       setTimeout(() => navigate("/profile"), 1500);
     } catch (error) {
       setMessage(error.message);
+    } finally {
+      setIsLoading(false); // Add this line to ensure loading stops
     }
   };
 
@@ -94,13 +98,17 @@ function CreatePost() {
           {/* Header with branded dark gradient */}
           <div className="p-6">
             <h2 className="text-3xl font-bold">Create New Post</h2>
-            <p className="opacity-90 mt-1">Share your item with the community</p>
+            <p className="opacity-90 mt-1">
+              Share your item with the community
+            </p>
           </div>
-  
+
           <form onSubmit={handleSubmit} className="p-6 space-y-5">
             {/* Post Name */}
             <div className="space-y-1">
-              <label className="block text-sm font-medium text-black">Post Name</label>
+              <label className="block text-sm font-medium text-black">
+                Post Name
+              </label>
               <input
                 type="text"
                 placeholder="e.g. Vintage Leather Jacket"
@@ -112,10 +120,12 @@ function CreatePost() {
                            transition-all duration-200"
               />
             </div>
-  
+
             {/* Description */}
             <div className="space-y-1">
-              <label className="block text-sm font-medium text-black">Description</label>
+              <label className="block text-sm font-medium text-black">
+                Description
+              </label>
               <textarea
                 placeholder="Tell us about your item..."
                 value={description}
@@ -127,11 +137,13 @@ function CreatePost() {
                            transition-all duration-200"
               />
             </div>
-  
+
             {/* Price & Category */}
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-1">
-                <label className="block text-sm font-medium text-black">Price ($)</label>
+                <label className="block text-sm font-medium text-black">
+                  Price ($)
+                </label>
                 <input
                   type="number"
                   placeholder="0.00"
@@ -143,9 +155,11 @@ function CreatePost() {
                              transition-all duration-200"
                 />
               </div>
-  
+
               <div className="space-y-1">
-                <label className="block text-sm font-medium text-black">Category</label>
+                <label className="block text-sm font-medium text-black">
+                  Category
+                </label>
                 <select
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
@@ -170,10 +184,12 @@ function CreatePost() {
                 </select>
               </div>
             </div>
-  
+
             {/* Item Image Upload */}
             <div className="space-y-3">
-              <label className="block text-sm font-medium text-black">Item Image</label>
+              <label className="block text-sm font-medium text-black">
+                Item Image
+              </label>
               <input
                 type="file"
                 accept="image/*"
@@ -202,9 +218,11 @@ function CreatePost() {
                     d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                   />
                 </svg>
-                <span className="mt-2 text-sm text-black">Click to upload image</span>
+                <span className="mt-2 text-sm text-black">
+                  Click to upload image
+                </span>
               </button>
-  
+
               {imagePreview && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
@@ -246,21 +264,49 @@ function CreatePost() {
                 </motion.div>
               )}
             </div>
-  
+
             {/* Create Post Button (dark gradient) */}
             <motion.button
               type="submit"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full bg-gradient-to-r from-black to-gray-800 text-white py-3.5 rounded-lg
-                         font-bold shadow-md hover:shadow-lg transition-all duration-200"
+              whileHover={{ scale: isLoading ? 1 : 1.02 }} // Disable hover effect when loading
+              whileTap={{ scale: isLoading ? 1 : 0.98 }} // Disable tap effect when loading
+              disabled={isLoading} // Disable button when loading
+              className={`w-full bg-gradient-to-r from-black to-gray-800 text-white py-3.5 rounded-lg
+             font-bold shadow-md hover:shadow-lg transition-all duration-200
+             ${isLoading ? "opacity-70 cursor-not-allowed" : ""}`}
             >
-              Create Post
+              {isLoading ? (
+                <div className="flex items-center justify-center">
+                  <svg
+                    className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
+                  </svg>
+                  Creating...
+                </div>
+              ) : (
+                "Create Post"
+              )}
             </motion.button>
           </form>
         </div>
       </motion.div>
-  
+
       {/* Success/Error Message Modal */}
       <AnimatePresence>
         {message && (
@@ -311,7 +357,9 @@ function CreatePost() {
                 )}
               </div>
               <h3 className="text-lg font-bold text-center mb-2 text-black">
-                {message.toLowerCase().includes("successfully") ? "Success!" : "Oops!"}
+                {message.toLowerCase().includes("successfully")
+                  ? "Success!"
+                  : "Oops!"}
               </h3>
               <p className="text-black text-center mb-6">{message}</p>
               <button
@@ -326,7 +374,6 @@ function CreatePost() {
       </AnimatePresence>
     </>
   );
-  
 }
 
 export default CreatePost;
