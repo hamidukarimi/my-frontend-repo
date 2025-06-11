@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
 import BackNav from '../backNav/BackNav';
@@ -46,7 +47,7 @@ const CreateStory = () => {
       const token = localStorage.getItem('token');
 
       const response = await axios.post(
-        'http://localhost:5000/api/stories/create',
+        `${BASE_URL}/api/stories/create`,
         formData,
         {
           headers: {
