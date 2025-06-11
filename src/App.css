@@ -9,12 +9,12 @@ body {
   color: black;
 }
 
-/* @media (min-width: 490px) {
+@media (min-width: 490px) {
   body {
     display: none !important;
     visibility: hidden !important;
   }
-} */
+}
 
 
 .loader {
