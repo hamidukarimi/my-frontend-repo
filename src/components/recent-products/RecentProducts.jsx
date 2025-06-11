@@ -16,7 +16,7 @@ const RecentProducts = () => {
     },
     {
       id: 0,
-      image: `./example.jpg`,
+      image: `https://i.pinimg.com/736x/34/84/0a/34840a5cb9734c02dc1aa919c99afe31.jpg`,
       title: "Lorem ispum",
       price: "$399",
       prevPrice: "$499",
@@ -25,7 +25,7 @@ const RecentProducts = () => {
     },
     {
       id: 0,
-      image: `./example.jpg`,
+      image: `https://i.pinimg.com/736x/a3/a8/4b/a3a84bce19bfa30cc2dea8504ddb7bfe.jpg`,
       title: "Lorem ispum",
       price: "$399",
       prevPrice: "$499",
