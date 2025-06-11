@@ -8,8 +8,7 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 
-import Header from "../header/Header";
-import Menubar from "../Menubar/Menubar";
+
 import ProductCard from "../Products/ProductCard";
 import BackNav from "../backNav/BackNav";
 
@@ -75,7 +74,6 @@ const UserProfile = () => {
   return (
     <>
       <BackNav pageName={`${name} ${lastName}`}/>
-      <Menubar />
 
       <div className="px-4 py-6">
         <div className="flex items-center justify-start gap-4">

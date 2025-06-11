@@ -12,6 +12,7 @@ import {
   faAdd,
   faPlus,
   faSquarePlus,
+  faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { Link, NavLink } from "react-router-dom";
@@ -26,9 +27,9 @@ const Menubar = () => {
     },
     {
       objectId: 2,
-      src: faHeart,
-      name: "Favorites",
-      path: "/favorites",
+      src: faUsers,
+      name: "Users",
+      path: "/users",
     },
     {
       objectId: 3,

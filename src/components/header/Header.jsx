@@ -36,9 +36,11 @@ let Header = () => {
             <img className="w-6" src="./plus.svg" />
           </span>
           </Link>
-          <span className="cursor-pointer p-3 rounded-full hover:bg-[#e5e5e5] transition">
+          <Link to="/favorites" className="cursor-pointer p-3 rounded-full hover:bg-[#e5e5e5] transition">
+            <span>
             <img src="./heart.svg" />
           </span>
+          </Link>
           <span className="cursor-pointer p-3  rounded-full hover:bg-[#e5e5e5] transition">
             <img src="./bell-icon.svg" />
           </span>

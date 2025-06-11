@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import BackNav from '../backNav/BackNav';
+import Header from '../header/Header';
+import Menubar from '../Menubar/Menubar';
 
 const Users = () => {
   // Static user data with local profile images
@@ -19,16 +21,7 @@ const Users = () => {
     },
     {
       id: 2,
-      path: "/user-profile/6847f90c8f6abb44ef7f43c8",
-      name: 'Zakirullah Aminy',
-      username: 'aminyzakir',
-      avatar: 'https://i.ibb.co/4R847dWs/15e92ca7f743.png',
-      bio: 'Front-End Developer',
-      isVerified: false,
-      isOnline: true
-    },
-    {
-      id: 3,
+      path: "/user-profile/68482e901d57fd0b1697e369",
       name: 'Hamas Hakimi',
       username: 'hamas_hakimi_afg',
       avatar: 'https://i.ibb.co/VcKYXbtW/Screenshot-111.png',
@@ -37,7 +30,29 @@ const Users = () => {
       isOnline: true
     },
     {
+      id: 3,
+      path: "/user-profile/6847f90c8f6abb44ef7f43c8",
+      name: 'Zakirullah Aminy',
+      username: 'aminyzakir',
+      avatar: 'https://i.ibb.co/4R847dWs/15e92ca7f743.png',
+      bio: 'Front-End Developer',
+      isVerified: false,
+      isOnline: false
+    },
+    {
       id: 4,
+      path: "/user-profile/6848318b1d57fd0b1697e46b",
+      name: 'Omar Jan',
+      username: 'itxomar7',
+      avatar: 'https://i.ibb.co/v49RpDbp/80319523823d.jpg',
+      bio: 'Student at Secondary School',
+      isVerified: true,
+      isOnline: false
+    },
+    
+    {
+      id: 5,
+      path: "/user-profile/6847fd078f6abb44ef7f4484",
       name: 'Abdul Tawab Samadzai',
       username: 'tawab_samadzai12',
       avatar: 'https://i.ibb.co/cXygBgpV/d90b56b935b4.jpg',
@@ -45,8 +60,10 @@ const Users = () => {
       isVerified: false,
       isOnline: false
     },
+    
     {
-      id: 5,
+      id: 6,
+      path: "",
       name: 'Nasratullah Bakhtyari',
       username: 'nasratullah05',
       avatar: 'https://i.pinimg.com/736x/47/a3/9f/47a39fa42af9266c97f4b778624533c1.jpg',
@@ -55,7 +72,8 @@ const Users = () => {
       isOnline: true
     },
     {
-      id: 6,
+      id: 7,
+      path: "/user-profile/68482e901d57fd0b1697e369",
       name: 'Faisal Mohammadi',
       username: 'mfaisal_001',
       avatar: 'https://i.pinimg.com/736x/49/d2/1e/49d21e0462c4808778bc6c9c2f724eb7.jpg',
@@ -65,7 +83,7 @@ const Users = () => {
     },
     
     {
-      id: 7,
+      id: 8,
       name: 'Abubakr Ezam',
       username: 'ezam004',
       avatar: 'https://i.ibb.co/9Hx54KCV/Screenshot-20250610-173121-Gallery.jpg',
@@ -74,7 +92,7 @@ const Users = () => {
       isOnline: false
     },
     {
-      id: 8,
+      id: 9,
       name: 'Jamshid Ahmadi',
       username: 'jahmadi107',
       avatar: 'https://i.pinimg.com/736x/24/0b/9a/240b9a88fcc0652927107d8bdf315229.jpg',
@@ -101,7 +119,8 @@ const Users = () => {
 
   return (
     <>
-    <BackNav pageName="Users"/>
+    <Header />
+    <Menubar />
     <div className="min-h-screen bg-white p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}

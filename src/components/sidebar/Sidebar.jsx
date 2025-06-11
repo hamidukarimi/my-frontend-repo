@@ -27,25 +27,25 @@ const MENU_ITEMS = [
     id: "home",
     label: "Home",
     icon: faHome,
-    href: "/home",
+    href: "/",
   },
   {
     id: "dashboard",
     label: "Dashboard",
     icon: faTachometerAlt,
-    href: "/dashboard",
+    href: "",
   },
   {
     id: "projects",
     label: "Projects",
     icon: faFolder,
-    href: "/projects",
+    href: "",
   },
   {
     id: "tasks",
     label: "Tasks",
     icon: faClipboardList,
-    href: "/tasks",
+    href: "",
   },
   {
     id: "reporting",
@@ -56,7 +56,7 @@ const MENU_ITEMS = [
       {
         id: "notifications",
         label: "Notifications",
-        href: "/reporting/notifications",
+        href: "",
       },
       { id: "analytics", label: "Analytics", href: "" },
       { id: "reports", label: "Reports", href: "" },
@@ -68,7 +68,7 @@ const MENU_ITEMS = [
     icon: faUserCircle,
     subItems: [
       { id: "all-users", label: "All Users", href: "/users" },
-      { id: "invite-user", label: "Invite User", href: "/users/invite" },
+      { id: "invite-user", label: "Invite User", href: "/users" },
     ],
   },
 ];

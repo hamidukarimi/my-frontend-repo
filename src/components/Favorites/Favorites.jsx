@@ -2,12 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Header from "../header/Header";
 import Menubar from "../Menubar/Menubar";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import BackNav from "../backNav/BackNav";
 
 const Favorites = () => {
   return (
     <>
-      <Header />
-      <Menubar />
+      <BackNav pageName="Favorites"/>
       {/* <div className="px-4 py-6">
 
       

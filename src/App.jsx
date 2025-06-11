@@ -11,6 +11,8 @@ import ProductInfo from "./components/Product-info/ProductInfo";
 import Cart from "./components/Cart/Cart";
 import Favorites from "./components/Favorites/Favorites";
 import Users from "./components/Users/Users";
+import CreateStory from "./components/createStory/CreateStory";
+import ViewsStory from "./components/viewStory/ViewsStory";
 
 const App = () => {
   console.log("Using API:", import.meta.env.VITE_API_BASE_URL);
@@ -54,6 +56,8 @@ const App = () => {
             {/* <Route path="/product-info/:postId" element={<ProductInfo />} /> */}
             <Route path="/user-profile/:userId" element={<UserProfile />} />
             <Route path="/create-post" element={<CreatePost />} />
+            <Route path="/create-story" element={<CreateStory />} />
+            <Route path="/stories/:id" element={<ViewsStory />} />
             <Route path="/products/:id" element={<ProductInfo />} />
 
             {/* <Route path="/users" element={<Users />} /> */}
