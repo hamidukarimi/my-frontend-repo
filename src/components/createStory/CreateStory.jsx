@@ -179,6 +179,7 @@ const CreateStory = () => {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 className="w-full mt-1 p-2 border rounded"
+                required
               />
             </div>
 
