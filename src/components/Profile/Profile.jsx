@@ -273,7 +273,7 @@ const Profile = () => {
           {[...user?.posts].reverse().map((post, index) => (
             <>
               {editingPostId === post._id && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+                <div key={index} className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
                   <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md m-4">
                     <h2 className="text-xl font-semibold mb-4">Edit Post</h2>
 
